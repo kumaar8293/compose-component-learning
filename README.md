@@ -257,6 +257,34 @@ This project uses a single `MainActivity` with commented-out code blocks. To exp
 
 ---
 
+### Widget 8: Gradient Button
+
+**Location:** Section `//====== 9 ==========`
+
+**What it demonstrates:**
+- Custom button with gradient background
+- Using `Brush` for gradient effects
+- Material 3 Button with transparent container
+- Custom styling with rounded corners
+- Composable parameters for customization
+
+**How to test:**
+1. Uncomment lines 164-182 in `MainActivity.kt` (includes Password Text Field and Gradient Button)
+2. Comment out other active sections
+3. Run the app
+4. Type a password and click the eye icon to toggle visibility
+5. Click the gradient button to see the click handler
+
+**Key Concepts:**
+- `Brush.horizontalGradient()` - Creates horizontal gradient with color list
+- `ButtonDefaults.buttonColors()` - Customizes button colors
+- `Color.Transparent` - Makes button container transparent to show gradient
+- `RoundedCornerShape()` - Applies rounded corners to the gradient
+- `Box` with `background()` modifier - Applies gradient as background
+- Customizable parameters for text, text color, and gradient colors
+
+---
+
 ## 📁 Project Structure
 
 ```
@@ -271,7 +299,8 @@ app/src/main/java/com/example/compose_learning/
 │   ├── 05_ExpandedCard.kt            # Expandable card widget
 │   ├── 05_GoogleSignUpButton.kt      # Google button widget
 │   ├── 06_CoilImageLoading.kt        # Coil image loading widget
-│   └── 07_PasswordTextField.kt       # Password text field widget
+│   ├── 07_PasswordTextField.kt       # Password text field widget
+│   └── 08_GradientButton.kt          # Gradient button widget
 └── ui/theme/
     ├── Color.kt                      # Color scheme definitions
     ├── Shape.kt                      # Shape definitions
