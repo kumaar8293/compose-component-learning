@@ -46,6 +46,7 @@ import com.example.compose_learning.dummy.ui.GoogleButton
 import com.example.compose_learning.dummy.ui.HoistNotificationCounter
 import com.example.compose_learning.dummy.ui.NotificationCounter
 import com.example.compose_learning.dummy.ui.NotificationCounterTest
+import com.example.compose_learning.dummy.ui.PasswordTextField
 import com.example.compose_learning.dummy.ui.RecompositionDemo
 import com.example.compose_learning.dummy.ui.getCategoryList
 import com.example.compose_learning.ui.theme.ComposelearningTheme
@@ -149,16 +150,28 @@ class MainActivity : ComponentActivity() {
 //            }
 
             //====== 7: Coil Image loader ==========
+//            Column(
+//                verticalArrangement = Arrangement.Center,
+//                horizontalAlignment = Alignment.CenterHorizontally,
+//                modifier = Modifier
+//                    .fillMaxSize()
+//            ) {
+//              //  CoilImageLoad()
+//                CoilSubcomposeAsyncImage()
+//            }
+
+
+            //====== 8: Password Text Field ==========
+            // Demonstrates: Material 3 OutlinedTextField with password visibility toggle
+            // How to test: Currently active - Type password and click eye icon to toggle visibility
             Column(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
                     .fillMaxSize()
             ) {
-              //  CoilImageLoad()
-                CoilSubcomposeAsyncImage()
+                PasswordTextField()
             }
-
         }
     }
 }

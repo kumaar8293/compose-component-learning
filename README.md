@@ -229,6 +229,34 @@ This project uses a single `MainActivity` with commented-out code blocks. To exp
 
 ---
 
+### Widget 7: Password Text Field
+
+**Location:** Section `//====== 8 ==========`
+
+**What it demonstrates:**
+- Material 3 `OutlinedTextField` component
+- Password visibility toggle functionality
+- Visual transformation for password masking
+- IconButton for toggle visibility
+- Keyboard options configuration
+- State management for password text and visibility
+
+**How to test:**
+1. Uncomment lines 164-172 in `MainActivity.kt`
+2. Comment out other active sections
+3. Run the app
+4. Type a password and click the eye icon to toggle visibility
+
+**Key Concepts:**
+- `OutlinedTextField` - Material 3 text input with outline border
+- `VisualTransformation` - Controls how text is displayed (masked/unmasked)
+- `PasswordVisualTransformation()` - Masks password with dots
+- `IconButton` - Clickable icon in trailingIcon position
+- `KeyboardOptions` - Configures keyboard type (Password)
+- State management with `remember` and `mutableStateOf`
+
+---
+
 ## 📁 Project Structure
 
 ```
@@ -241,7 +269,9 @@ app/src/main/java/com/example/compose_learning/
 │   ├── 3_RememberAndRememberSaveable.kt  # State management demo
 │   ├── 4_HoistingAndUniDirectionalFlow.kt # State hoisting demo
 │   ├── 05_ExpandedCard.kt            # Expandable card widget
-│   └── 05_GoogleSignUpButton.kt      # Google button widget
+│   ├── 05_GoogleSignUpButton.kt      # Google button widget
+│   ├── 06_CoilImageLoading.kt        # Coil image loading widget
+│   └── 07_PasswordTextField.kt       # Password text field widget
 └── ui/theme/
     ├── Color.kt                      # Color scheme definitions
     ├── Shape.kt                      # Shape definitions
