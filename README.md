@@ -175,6 +175,10 @@ This project uses a single `MainActivity` with commented-out code blocks. To exp
 - Icon rotation animations
 - Customizable card component with multiple parameters
 
+**Demo GIF:**
+
+![Expandable Card Demo](screenshot/expandable-card.gif)
+
 **How to test:**
 1. Uncomment lines 101-115 in `MainActivity.kt`
 2. Comment out other active sections
@@ -200,11 +204,9 @@ This project uses a single `MainActivity` with commented-out code blocks. To exp
 - Click handling with callbacks
 - Material 3 `Surface` component
 
-**Demo Video:**
+**Demo GIF:**
 
-Watch the demo: [Google Sign Up Button Demo](screenshot/google-sign-up.mp4)
-
-> **Note:** Click the link above to view the video demonstration of Widget 6 in action, showing the button's loading state and smooth animations.
+![Google Sign Up Button Demo](screenshot/google-sign-up.gif)
 
 **How to test:**
 1. Uncomment lines 118-127 in `MainActivity.kt` (already active)
