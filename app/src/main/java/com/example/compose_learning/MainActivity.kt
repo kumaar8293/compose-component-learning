@@ -48,26 +48,40 @@ import com.example.compose_learning.dummy.ui.RecompositionDemo
 import com.example.compose_learning.dummy.ui.getCategoryList
 import com.example.compose_learning.ui.theme.ComposelearningTheme
 
+/**
+ * MainActivity - Entry point of the application
+ * 
+ * This activity demonstrates various Jetpack Compose widgets and concepts.
+ * To test different widgets, uncomment the corresponding section below.
+ * Only one section should be active at a time.
+ */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Enable edge-to-edge display (content can extend behind system bars)
         enableEdgeToEdge()
         setContent {
-            //====== 0==========
+            //====== 0: Column with Scrollable Blog Categories ==========
+            // Demonstrates: Column with verticalScroll, reusable BlogCategory composable
+            // How to test: Uncomment lines below and comment out other active sections
 //            Column (modifier = Modifier.verticalScroll(rememberScrollState())){
 //                getCategoryList().map { item ->
 //                    BlogCategory(item.image, item.title, item.subtitle)
 //                }
 //            }
 
-            //====== 1 ==========
+            //====== 1: LazyColumn for Efficient Lists ==========
+            // Demonstrates: LazyColumn for better performance with large lists
+            // How to test: Uncomment lines below and comment out other active sections
 //            LazyColumn {
 //                items(getCategoryList()) { item ->
 //                    BlogCategory(item.image, item.title, item.subtitle)
 //                }
 //            }
 
-            //====== 2 ==========
+            //====== 2: Recomposition Demo ==========
+            // Demonstrates: Understanding recomposition and state management with remember
+            // How to test: Uncomment lines below, run app, click button, check Logcat for "LENSA" tag
 //            Column(
 //                modifier = Modifier
 //                    .fillMaxSize()
@@ -77,8 +91,9 @@ class MainActivity : ComponentActivity() {
 //                RecompositionDemo()
 //            }
 
-            //====== 3 ==========
-
+            //====== 3: Remember and RememberSaveable ==========
+            // Demonstrates: Difference between remember and rememberSaveable
+            // How to test: Uncomment lines below, click buttons, rotate device to see state persistence
 //            Column(
 //                verticalArrangement = Arrangement.Center,
 //                horizontalAlignment = Alignment.CenterHorizontally,
@@ -87,7 +102,9 @@ class MainActivity : ComponentActivity() {
 //                NotificationCounterTest()
 //            }
 
-            //====== 4 ==========
+            //====== 4: Hoisting and Unidirectional Data Flow ==========
+            // Demonstrates: State hoisting pattern and sharing state between composables
+            // How to test: Uncomment lines below and observe how state is shared between components
 //            Column(
 //                verticalArrangement = Arrangement.Center,
 //                horizontalAlignment = Alignment.CenterHorizontally,
@@ -96,8 +113,9 @@ class MainActivity : ComponentActivity() {
 //                HoistNotificationCounter()
 //            }
 
-            //====== 5 Expanded Card ==========
-
+            //====== 5: Expandable Card ==========
+            // Demonstrates: Animated expandable card with Material 3 IconButton
+            // How to test: Uncomment lines below and click card/icon to expand/collapse
 //            Column(
 //                verticalArrangement = Arrangement.Center,
 //                modifier = Modifier
@@ -108,13 +126,15 @@ class MainActivity : ComponentActivity() {
 //            ) {
 //                ExpandableCard(
 //                    title = "Hey There",
-//                    subTitle = "Here’s the correct Material 3 way to make" +
+//                    subTitle = "Here's the correct Material 3 way to make" +
 //                            " ONLY the icon clickable using IconButton, " +
 //                            "while the text stays non-clickable.",
 //                )
 //            }
 
-            //====== 6 Google Signup button ==========
+            //====== 6: Google Sign Up Button ==========
+            // Demonstrates: Custom button with loading state and animations
+            // Currently active - Click button to see loading animation
             Column(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -130,6 +150,10 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+/**
+ * Preview composable demonstrating modifier chaining
+ * Shows how modifiers are applied in order (top to bottom)
+ */
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
 fun ModifireDummy() {
@@ -140,35 +164,46 @@ fun ModifireDummy() {
             fontSize = 24.sp,
             textAlign = TextAlign.Center,
             modifier = Modifier
-                .clickable {}
-                .background(Color.Blue)
-                .size(200.dp)
-                .padding(36.dp)
-                .clip(CircleShape)
-                .border(2.dp, color = Color.Red, shape = CircleShape)
-                .background(color = Color.Yellow)
+                .clickable {} // Applied first - makes entire area clickable
+                .background(Color.Blue) // Applied second - blue background
+                .size(200.dp) // Applied third - sets size
+                .padding(36.dp) // Applied fourth - adds padding inside
+                .clip(CircleShape) // Applied fifth - clips to circle
+                .border(2.dp, color = Color.Red, shape = CircleShape) // Applied sixth - red border
+                .background(color = Color.Yellow) // Applied last - yellow background (visible)
 
         )
         CircularImage()
     }
 }
 
+/**
+ * Composable that displays a circular image with color filter
+ * Demonstrates: Image composable, CircleShape clipping, ColorFilter
+ */
 @Composable
 fun CircularImage() {
     Image(
-        contentScale = ContentScale.Crop,
+        contentScale = ContentScale.Crop, // Crop image to fit bounds
         painter = painterResource(
             R.drawable.ic_launcher_foreground
         ),
-        contentDescription = "",
+        contentDescription = "", // Accessibility description
         modifier = Modifier
-            .size(90.dp)
-            .clip(CircleShape),
-        colorFilter = ColorFilter.tint(Color.Red)
+            .size(90.dp) // Set image size
+            .clip(CircleShape), // Clip to circular shape
+        colorFilter = ColorFilter.tint(Color.Red) // Apply red tint
     )
 }
 
-
+/**
+ * Reusable list item composable
+ * Displays an image with title and subtitle in a row layout
+ * 
+ * @param imageId Resource ID of the image to display
+ * @param title Main text to display
+ * @param subtitle Secondary text to display
+ */
 @Composable
 fun ListViewItem(imageId: Int, title: String, subtitle: String) {
     Row(Modifier.padding(8.dp)) {
@@ -185,7 +220,10 @@ fun ListViewItem(imageId: Int, title: String, subtitle: String) {
     }
 }
 
-
+/**
+ * Preview composable showing multiple list items
+ * Demonstrates: Reusing ListViewItem composable
+ */
 @Composable
 fun TextInputPreview() {
     Column() {
