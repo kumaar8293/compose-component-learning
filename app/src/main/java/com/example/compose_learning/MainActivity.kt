@@ -39,6 +39,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compose_learning.dummy.ui.BlogCategory
+import com.example.compose_learning.dummy.ui.CoilImageLoad
+import com.example.compose_learning.dummy.ui.CoilSubcomposeAsyncImage
 import com.example.compose_learning.dummy.ui.ExpandableCard
 import com.example.compose_learning.dummy.ui.GoogleButton
 import com.example.compose_learning.dummy.ui.HoistNotificationCounter
@@ -135,15 +137,26 @@ class MainActivity : ComponentActivity() {
             //====== 6: Google Sign Up Button ==========
             // Demonstrates: Custom button with loading state and animations
             // Currently active - Click button to see loading animation
+//            Column(
+//                verticalArrangement = Arrangement.Center,
+//                horizontalAlignment = Alignment.CenterHorizontally,
+//                modifier = Modifier
+//                    .fillMaxSize()
+//            ) {
+//                GoogleButton() {
+//                    Toast.makeText(this@MainActivity, "Clicked", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+
+            //====== 7: Coil Image loader ==========
             Column(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
                     .fillMaxSize()
             ) {
-                GoogleButton() {
-                    Toast.makeText(this@MainActivity, "Clicked", Toast.LENGTH_SHORT).show()
-                }
+              //  CoilImageLoad()
+                CoilSubcomposeAsyncImage()
             }
 
         }

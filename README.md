@@ -15,6 +15,13 @@ A comprehensive Android Jetpack Compose learning project that demonstrates vario
 
 This project is designed to help you learn Jetpack Compose by exploring different widgets and concepts. Each widget demonstrates specific Compose features and patterns.
 
+### 🛠️ Technologies & Libraries
+
+- **Jetpack Compose** - Modern Android UI toolkit
+- **Material 3** - Material Design 3 components
+- **Coil** - Image loading library for Compose (v2.5.0)
+- **Kotlin** - Programming language (v2.0.21)
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -287,6 +294,7 @@ To add a new widget to this project:
 - [Jetpack Compose Documentation](https://developer.android.com/jetpack/compose)
 - [Compose State Management](https://developer.android.com/jetpack/compose/state)
 - [Material 3 Components](https://m3.material.io/)
+- [Coil Image Loading Library](https://coil-kt.github.io/coil/)
 
 ## 📝 Notes
 
@@ -294,6 +302,7 @@ To add a new widget to this project:
 - Check Logcat for "LENSA" tag to see recomposition logs
 - All widgets follow Material 3 design guidelines
 - State management examples show best practices for Compose
+- **Coil library** is included for image loading - use `AsyncImage` composable for loading images from URLs
 
 ## 🤝 Contributing
 
